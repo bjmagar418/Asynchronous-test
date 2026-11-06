@@ -1,10 +1,28 @@
 import {test,except} from 'vitest';
 
 import {generateToken} from './async-example'
-test('should generate a token value',() => {
+
+// asyncrhonous test with promises
+// test('should generate a token value',() => {
+//     const testUserEmail = "test@test.com";
+
+//     generateToken(testUserEmail,(err,token) => {
+//     except(token).toBeDefined();
+//     });
+// });
+
+
+// asynchronous test with promises
+test('should generate a token value',(done) => {
     const testUserEmail = "test@test.com";
 
     generateToken(testUserEmail,(err,token) => {
-    except(token).toBeDefined();
+        try {
+               except(token).toBeDefined();
+ 
+        } catch (error) {
+              done(AggregateError);
+        }
+  
     });
 });
