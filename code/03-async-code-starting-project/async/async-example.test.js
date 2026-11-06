@@ -26,3 +26,9 @@ test('should generate a token value',(done) => {
   
     });
 });
+test('should generate a token vale',async() => {
+    const testUserEmail = "test@test.com";
+await expect(generateTokenPromise(testUserEmail)).resolves.toBeDefined();
+
+
+})
